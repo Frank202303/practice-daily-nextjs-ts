@@ -10,13 +10,25 @@ const links: NavLink[] = [
 ];
 
 const Links = () => {
+  // MOCK  TODO
+  const session = true;
+  const isAdmin = true;
+
   return (
     <div className={styles.container}>
       {links.map((link) => (
         <NavLinkComponent link={link} key={link.title} />
       ))}
-      <NavLinkComponent link={{ title: "admin", path: "/admin" }} />
-      <NavLinkComponent link={{ title: "Login", path: "/login" }} />
+      {session ? (
+        <>
+          {isAdmin && (
+            <NavLinkComponent link={{ title: "Admin", path: "/admin" }} />
+          )}
+          <button>Logout</button>
+        </>
+      ) : (
+        <NavLinkComponent link={{ title: "Login", path: "/login" }} />
+      )}
     </div>
   );
 };
