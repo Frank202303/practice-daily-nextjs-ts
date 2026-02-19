@@ -6,14 +6,16 @@ import { usePathname } from "next/navigation";
 
 interface Props {
   link: NavLink;
+  onClick?: () => void;
 }
 
-const NavLinkComponent = ({ link }: Props) => {
+const NavLinkComponent = ({ link, onClick }: Props) => {
   const pathName = usePathname();
   console.log(pathName);
   return (
     <div
       className={`${styles.container}  ${pathName === link.path && styles.active}`}
+      onClick={onClick}
     >
       <Link href={link.path}>{link.title}</Link>
     </div>
