@@ -42,3 +42,9 @@
     background-color: var(--bgSoft);
     color: var(--text);
 }
+
+@media(max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
