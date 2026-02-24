@@ -2,9 +2,15 @@ import React from "react";
 import styles from "./about.module.css";
 import Image from "next/image";
 
+const stats = [
+  { value: "10K+", label: "Years of experience" },
+  { value: "300+", label: "Projects completed" },
+  { value: "50+", label: "Team members" },
+];
+
 const AboutPage = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.textContainer}>
         <h2 className={styles.subtitle}>About Agency</h2>
         <h1 className={styles.title}>
@@ -17,26 +23,18 @@ const AboutPage = () => {
           of web and software development services.
         </p>
         <div className={styles.boxes}>
-          <div className={styles.box}>
-            <h1>10 K+</h1>
-            <p>Year of experience</p>
-          </div>
-
-          <div className={styles.box}>
-            <h1>10 K+</h1>
-            <p>Year of experience</p>
-          </div>
-
-          <div className={styles.box}>
-            <h1>10 K+</h1>
-            <p>Year of experience</p>
-          </div>
+          {stats.map((sts) => (
+            <div className={styles.box} key={sts.label}>
+              <h1>{sts.value}</h1>
+              <p>{sts.label}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className={styles.imgContainer}>
         <Image src={"/about.png"} alt="about" fill className={styles.img} />
       </div>
-    </div>
+    </section>
   );
 };
 
