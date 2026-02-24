@@ -1,7 +1,15 @@
-import React from "react";
+import BlogCard from "@/components/blogCard/BlogCard";
+import styles from "./blog.module.css";
 
 const BlogPage = () => {
-  return <div>BlogPage</div>;
+  return (
+    <section className={styles.container}>
+      <BlogCard />
+      <BlogCard />
+      <BlogCard />
+      <BlogCard />
+    </section>
+  );
 };
 
 export default BlogPage;
