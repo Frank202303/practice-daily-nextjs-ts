@@ -54,3 +54,22 @@
 .heroImg {
     object-fit: contain;
 }
+
+@media(max-width: 768px) {
+    .container {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .buttons {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .imgContainer {
+        width: 75vw;
+        min-height: 400px;
+    }
+
+
+}

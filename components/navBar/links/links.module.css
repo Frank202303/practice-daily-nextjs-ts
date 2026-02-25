@@ -34,7 +34,7 @@
         right: 0;
         height: calc(100vh - 100px);
         width: 50vw;
-        background-color: blueviolet;
+        background-color: var(--bg);
         padding: 20px;
 
     }
